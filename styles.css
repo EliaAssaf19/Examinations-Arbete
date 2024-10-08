@@ -152,13 +152,13 @@ body {
     color: #ffffff; /* Textfärg */
     text-decoration: none; /* Ta bort understrykning */
     font-weight: bold; /* Fet stil */
-    font-size: 1.2rem; /* Justera textstorleken */
-    padding: 8px 20px; /* Minska padding */
+    font-size: clamp(1rem, 2vw + 1rem, 1.5rem); /* Justera textstorleken */
+    padding: clamp(0.5rem, 2vw, 1rem); /* Minska padding */
     border: 2px solid #ffffff; /* Lägg till en vit ram runt varje länk */
     border-radius: 5px; /* Rundar hörnen på boxen */
     display: inline-block; /* Gör länken till ett block som tar upp plats som en box */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smidig övergång för hover-effekten */
-    margin: 0 10px; /* Justera avståndet mellan länkarna */
+    margin: clamp(0.5rem, 1vw, 1rem);; /* Justera avståndet mellan länkarna */
 }
 
 .header-navlink:hover {
