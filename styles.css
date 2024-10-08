@@ -13,6 +13,8 @@ body {
     background-color: var(--color-white);
 }
 
+/* karusell och tillhöranda media querys */
+
 .carousel {
     position: relative;
     overflow: hidden;
@@ -54,7 +56,8 @@ body {
     }
 }
 
-/* Knappstilar */
+/* karusell knappar */
+
 .carousel-button {
     position: absolute;
     top: 50%;
@@ -89,6 +92,8 @@ body {
     margin-bottom: 10px;
 }
 
+/* Loggor & Info */
+
 .team-logo {
     height: 3rem; /* Justera höjden efter behov */
     width: auto; /* Låt bredden anpassa sig för att behålla proportionerna */
@@ -122,6 +127,8 @@ body {
     font-weight: bold;
 }
 
+/* Header-element */
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -134,7 +141,6 @@ body {
     position: relative;
 }
 
-/* Lägg till header-nav här */
 .header-nav {
     display: flex; /* Gör navigationsmenyn till en flexbox */
     justify-content: center; /* Centrera länkarna horisontellt */
@@ -167,7 +173,8 @@ body {
     padding-left: 2rem; /* Lägger till lite avstånd till vänster */
 }
 
-/* Hamburger-stilar och media queries */
+/* Hamburger och tillhörande media querys */
+
 .hamburger {
     display: none; /* Döljer hamburgermenyn som standard */
     font-size: 24px; /* Justera storleken på hamburgermenyn */
@@ -177,7 +184,6 @@ body {
     cursor: pointer; /* Ändra muspekaren till en pekare */
 }
 
-/* Media query för skärmar mindre än eller lika med 768px */
 @media (max-width: 768px) {
 
     .hamburger {
@@ -214,7 +220,8 @@ body {
     }
 }
 
-/* För större skärmar (över 768px) */
+/* Media query till nav för större skärmar */
+
 @media (min-width: 769px) {
     .header-nav {
         display: flex; /* Gör menyn synlig och horisontell */
