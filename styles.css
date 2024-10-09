@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 1rem;
+    padding: 3rem;
 }
 
 .flex-item {
@@ -24,14 +24,14 @@ body {
     color: var(--color-white);
     padding: 1rem;
     flex: 1 1 700px;
-    margin: 0.5rem;
+    margin: 1rem;
     border-radius: 8px;
     box-sizing: border-box;
 }
 
 .main-article {
     flex: 1 1 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 6rem;
     margin-top: 2rem;
 }
 
@@ -54,7 +54,25 @@ body {
 .news-heading {
     text-align: left; /* Justera texten till vänster */
     color: var(--color-black); /* Färg på rubriken */
-    margin-bottom: 0rem; /* Avstånd under rubriken */
-    padding-right: 108rem; /* Justera detta värde för att flytta rubriken mer till vänster */
-    font-size: 2rem; /* Storlek på rubriken */
+    margin-bottom: 0; /* Avstånd under rubriken */
+    width: 100%; /* Se till att den tar upp hela bredden */
+    font-size: clamp(1.5rem, 2vw + 1rem, 2rem); /* Justera storleken responsivt */
+}
+
+.news-subheading {
+    text-align: left; /* Justera texten till vänster */
+    color: var(--color-black); /* Färg på rubriken */
+    margin-top: 2rem; /* Skapa utrymme ovanför rubriken */
+    margin-bottom: 1rem; /* Utrymme under rubriken */
+    font-size: clamp(1.5rem, 2vw + 1rem, 2rem); /* Justera storleken responsivt */
+    flex-basis: 100%; /* Gör att rubriken tar hela bredden och hamnar på en egen rad */
+}
+
+a {
+    color: inherit; /* Gör att länken är i samma färg som omgivande text */
+    text-decoration: none; /* Tar bort understrykning */
+}
+
+a:hover {
+    text-decoration: underline; /* Valfritt: lägger till understrykning vid hovring */
 }
