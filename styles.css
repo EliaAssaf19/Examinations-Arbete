@@ -1,0 +1,60 @@
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-red: #dc2626;
+    --color-darkred: #a01717;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: var(--color-white);
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.flex-item {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 1rem;
+    flex: 1 1 700px;
+    margin: 0.5rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.main-article {
+    flex: 1 1 100%;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.flex-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.flex-item video {
+    max-width: 100%; /* Gör videon responsiv */
+    height: auto;    /* Bevara bildens proportioner */
+    border-radius: 4px; /* Valfritt: ge en mjukad hörn */
+}
+
+.flex-item p {
+    margin: 0.5rem 0; /* Avstånd mellan textstycken */
+    line-height: 2;  /* Öka radavståndet */
+}
+
+.news-heading {
+    text-align: left; /* Justera texten till vänster */
+    color: var(--color-black); /* Färg på rubriken */
+    margin-bottom: 0rem; /* Avstånd under rubriken */
+    padding-right: 108rem; /* Justera detta värde för att flytta rubriken mer till vänster */
+    font-size: 2rem; /* Storlek på rubriken */
+}
