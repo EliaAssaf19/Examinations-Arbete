@@ -46,6 +46,25 @@ body {
     border-radius: 4px; /* Valfritt: ge en mjukad hörn */
 }
 
+/* Media query för mindre skärmar */
+@media (max-width: 1024px) {
+    .flex-item {
+        flex: 1 1 calc(50% - 2rem); /* Två artiklar i bredd för mindre skärmar */
+    }
+}
+
+@media (max-width: 768px) {
+    .flex-item {
+        flex: 1 1 100%; /* En artikel i bredd för mobilskärmar */
+    }
+}
+
+@media (min-width: 1024px) {
+    .flex-item {
+        flex: 1 1 calc(33.33% - 2rem); /* Tre artiklar i bredd */
+    }
+}
+
 .flex-item p {
     margin: 0.5rem 0; /* Avstånd mellan textstycken */
     line-height: 2;  /* Öka radavståndet */
