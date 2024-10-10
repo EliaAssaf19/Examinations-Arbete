@@ -22,7 +22,7 @@ body {
 .flex-item {
     background-color: var(--color-black);
     color: var(--color-white);
-    padding: 1rem;
+    padding: 1rem; 
     flex: 1 1 700px;
     margin: 1rem;
     border-radius: 8px;
