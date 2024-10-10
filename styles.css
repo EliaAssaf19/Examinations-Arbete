@@ -1,413 +1,407 @@
-
 /* Färgschema */
 :root {
-    --color-white: #ffffff;
-    --color-black: #000000;
-    --color-red: #dc2626;
-    --color-darkred: #a01717;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-red: #dc2626;
+  --color-darkred: #a01717;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', Arial, sans-serif;
-    background-color: var(--color-white);
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background-color: var(--color-white);
 }
-
 
 /* karusell och tillhöranda media querys */
 
 .carousel {
-    position: relative;
-    overflow: hidden;
-    width: 100%; /* Fyller hela bredden */
+  position: relative;
+  overflow: hidden;
+  width: 100%; /* Fyller hela bredden */
 }
 
 .carousel-container {
-    overflow: hidden; /* Döljer överskjutande element */
+  overflow: hidden; /* Döljer överskjutande element */
 }
 
 .carousel-list {
-    display: flex; /* Gör listan till en flexbox */
-    transition: transform 0.3s ease; /* Smidig övergång vid scrollning */
-    list-style-type: none;
-    padding: 0; /* Ta bort padding */
-    margin: 0; /* Ta bort margin */
-    width: 100%; /* Se till att hela bredden används */
+  display: flex; /* Gör listan till en flexbox */
+  transition: transform 0.3s ease; /* Smidig övergång vid scrollning */
+  list-style-type: none;
+  padding: 0; /* Ta bort padding */
+  margin: 0; /* Ta bort margin */
+  width: 100%; /* Se till att hela bredden används */
 }
 
 .carousel-item {
-    flex: 0 0 calc(33.33% - 20px); /* Tre objekt på stor skärm */
-    margin: 0 10px; /* Justera marginalen */
-    background-color: var(--color-darkred);
-    padding: 10px;
-    border: 1px solid var(--color-darkred);
-    border-radius: 5px;
-    box-sizing: border-box; /* Inkludera padding och border i bredden */
+  flex: 0 0 calc(33.33% - 20px); /* Tre objekt på stor skärm */
+  margin: 0 10px; /* Justera marginalen */
+  background-color: var(--color-darkred);
+  padding: 10px;
+  border: 1px solid var(--color-darkred);
+  border-radius: 5px;
+  box-sizing: border-box; /* Inkludera padding och border i bredden */
 }
 
 @media (max-width: 1023px) and (min-width: 768px) {
-    .carousel-item {
-        flex: 0 0 calc(50% - 20px); /* Två objekt på surfplattor */
-    }
+  .carousel-item {
+    flex: 0 0 calc(50% - 20px); /* Två objekt på surfplattor */
+  }
 }
 
 @media (max-width: 767px) {
-    .carousel-item {
-        flex: 0 0 calc(100% - 20px); /* Ett objekt på mobiler */
-    }
+  .carousel-item {
+    flex: 0 0 calc(100% - 20px); /* Ett objekt på mobiler */
+  }
 }
 
 /* karusell knappar */
 
 .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--color-red);
-    border: none;
-    cursor: pointer;
-    font-size: 24px;
-    padding: 10px;
-    border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--color-red);
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
 .carousel-button.prev {
-    left: 10px;
-    color: var(--color-white);
+  left: 10px;
+  color: var(--color-white);
 }
 
 .carousel-button.next {
-    right: 10px;
-    color: var(--color-white);
+  right: 10px;
+  color: var(--color-white);
 }
 
 .carousel-button:hover {
-    background-color: var(--color-black);
+  background-color: var(--color-black);
 }
 
 .logos-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 /* Loggor & Info */
 
 .team-logo {
-    height: 3rem; /* Justera höjden efter behov */
-    width: auto; /* Låt bredden anpassa sig för att behålla proportionerna */
-    margin: 0 10px; /* Lägger till avstånd mellan loggan och texten */
+  height: 3rem; /* Justera höjden efter behov */
+  width: auto; /* Låt bredden anpassa sig för att behålla proportionerna */
+  margin: 0 10px; /* Lägger till avstånd mellan loggan och texten */
 }
 
 .match-info {
-    display: flex; /* Gör match-info till flexbox för att arrangera loggorna och texten horisontellt */
-    flex-direction: column;
-    align-items: center; /* Centrerar loggorna och texten vertikalt */
-    color: var(--color-white);
-    font-size: 1rem;
+  display: flex; /* Gör match-info till flexbox för att arrangera loggorna och texten horisontellt */
+  flex-direction: column;
+  align-items: center; /* Centrerar loggorna och texten vertikalt */
+  color: var(--color-white);
+  font-size: 1rem;
 }
 
 .match-info h3 {
-    margin: 5px 0; /* Lägger till avstånd runt rubriken */
-    text-align: center; /* Centrerar rubriken */
+  margin: 5px 0; /* Lägger till avstånd runt rubriken */
+  text-align: center; /* Centrerar rubriken */
 }
 
 .match-info p {
-    margin: 0; /* Tar bort marginalen för paragrafen */
-    text-align: center; /* Centrerar resultatet */
-    font-size: 1.9rem;
-    font-weight: bold;
+  margin: 0; /* Tar bort marginalen för paragrafen */
+  text-align: center; /* Centrerar resultatet */
+  font-size: 1.9rem;
+  font-weight: bold;
 }
 
 .location-date p {
-    text-align: center;
-    color: var(--color-white);
-    font-size: 1.1rem;
-    font-weight: bold;
+  text-align: center;
+  color: var(--color-white);
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
 /* Header-element */
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem; /* Minska paddingen */
-    background-color: var(--color-red);
-    width: 100%;
-    box-sizing: border-box; /* Inkludera padding och border i bredden */
-    min-height: 60px; /* Minska minsta höjd */
-    position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem; /* Minska paddingen */
+  background-color: var(--color-red);
+  width: 100%;
+  box-sizing: border-box; /* Inkludera padding och border i bredden */
+  min-height: 60px; /* Minska minsta höjd */
+  position: relative;
 }
 
 .header-nav {
-    display: flex; /* Gör navigationsmenyn till en flexbox */
-    justify-content: center; /* Centrera länkarna horisontellt */
-    flex-wrap: wrap; /* Låt länkarna radbrytas om de inte får plats */
-    width: 100%; /* Se till att menyn fyller hela bredden */
+  display: flex; /* Gör navigationsmenyn till en flexbox */
+  justify-content: center; /* Centrera länkarna horisontellt */
+  flex-wrap: wrap; /* Låt länkarna radbrytas om de inte får plats */
+  width: 100%; /* Se till att menyn fyller hela bredden */
 }
 
 .header-navlink {
-    color: #ffffff; /* Textfärg */
-    text-decoration: none; /* Ta bort understrykning */
-    font-weight: bold; /* Fet stil */
-    font-size: clamp(1rem, 2vw + 1rem, 1.5rem); /* Justera textstorleken */
-    padding: clamp(0.5rem, 2vw, 1rem); /* Minska padding */
-    border: 2px solid #ffffff; /* Lägg till en vit ram runt varje länk */
-    border-radius: 5px; /* Rundar hörnen på boxen */
-    display: inline-block; /* Gör länken till ett block som tar upp plats som en box */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smidig övergång för hover-effekten */
-    margin: clamp(0.5rem, 1vw, 1rem);; /* Justera avståndet mellan länkarna */
+  color: #ffffff; /* Textfärg */
+  text-decoration: none; /* Ta bort understrykning */
+  font-weight: bold; /* Fet stil */
+  font-size: clamp(1rem, 2vw + 1rem, 1.5rem); /* Justera textstorleken */
+  padding: clamp(0.5rem, 2vw, 1rem); /* Minska padding */
+  border: 2px solid #ffffff; /* Lägg till en vit ram runt varje länk */
+  border-radius: 5px; /* Rundar hörnen på boxen */
+  display: inline-block; /* Gör länken till ett block som tar upp plats som en box */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smidig övergång för hover-effekten */
+  margin: clamp(0.5rem, 1vw, 1rem); /* Justera avståndet mellan länkarna */
 }
 
 .header-navlink:hover {
-    background-color: #ffffff; /* Ändra bakgrundsfärgen vid hover */
-    color: var(--color-red); /* Ändra textfärgen vid hover */
-    border-color: var(--color-red); /* Ändra ramens färg vid hover */
+  background-color: #ffffff; /* Ändra bakgrundsfärgen vid hover */
+  color: var(--color-red); /* Ändra textfärgen vid hover */
+  border-color: var(--color-red); /* Ändra ramens färg vid hover */
 }
 
 .header-logo img {
-    height: 5rem; /* Justera höjden efter behov */
-    width: auto; /* Låt bredden anpassa sig för att behålla proportionerna */
-    padding-left: 2rem; /* Lägger till lite avstånd till vänster */
+  height: 5rem; /* Justera höjden efter behov */
+  width: auto; /* Låt bredden anpassa sig för att behålla proportionerna */
+  padding-left: 2rem; /* Lägger till lite avstånd till vänster */
 }
 
 /* Hamburger och tillhörande media querys */
 
 .hamburger {
-    display: none; /* Döljer hamburgermenyn som standard */
-    font-size: 24px; /* Justera storleken på hamburgermenyn */
-    background: none; /* Ta bort bakgrund */
-    border: none; /* Ta bort border */
-    color: var(--color-white); /* Ändra färg på ikonen */
-    cursor: pointer; /* Ändra muspekaren till en pekare */
+  display: none; /* Döljer hamburgermenyn som standard */
+  font-size: 24px; /* Justera storleken på hamburgermenyn */
+  background: none; /* Ta bort bakgrund */
+  border: none; /* Ta bort border */
+  color: var(--color-white); /* Ändra färg på ikonen */
+  cursor: pointer; /* Ändra muspekaren till en pekare */
 }
 
 @media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Visa hamburgermenyn */
+  }
 
-    .hamburger {
-        display: block; /* Visa hamburgermenyn */
-    }
+  .header-nav {
+    visibility: hidden; /* Dölj menyn */
+    opacity: 0; /* Gör menyn osynlig */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-red);
+    z-index: 100;
+    transition: visibility 0s, opacity 0.3s ease-out; /* Gör övergången mjuk */
+  }
 
-    .header-nav {
-        visibility: hidden; /* Dölj menyn */
-        opacity: 0; /* Gör menyn osynlig */
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-red);
-        z-index: 100;
-        transition: visibility 0s, opacity 0.3s ease-out; /* Gör övergången mjuk */
-    }
+  /* När header-nav har klassen "active", visa menyn */
+  .header-nav.active {
+    visibility: visible; /* Visa menyn */
+    opacity: 1; /* Gör menyn fullt synlig */
+  }
 
-    /* När header-nav har klassen "active", visa menyn */
-    .header-nav.active {
-        visibility: visible; /* Visa menyn */
-        opacity: 1; /* Gör menyn fullt synlig */
-    }
+  .header-navlist {
+    display: flex;
+    flex-direction: column; /* Gör listan vertikal */
+    padding: 10px;
+    list-style-type: none;
+  }
 
-    .header-navlist {
-        display: flex;
-        flex-direction: column; /* Gör listan vertikal */
-        padding: 10px;
-        list-style-type: none;
-    }
-
-    .header-navitem {
-        margin: 15px 0; /* Lägger till marginal mellan menyalternativ */
-    }
+  .header-navitem {
+    margin: 15px 0; /* Lägger till marginal mellan menyalternativ */
+  }
 }
 
 /* Media query till nav för större skärmar */
 
 @media (min-width: 769px) {
-    .header-nav {
-        display: flex; /* Gör menyn synlig och horisontell */
-        justify-content: center; /* Sprid ut länkarna jämnt */
-        align-items: center; /* Vertikalt centrerad */
-        width: 100%;
-        position: relative; /* Håll menyn inom header */
-        visibility: visible;
-        opacity: 1;
-        transition: none; /* Ingen övergång behövs här */
-    }
+  .header-nav {
+    display: flex; /* Gör menyn synlig och horisontell */
+    justify-content: center; /* Sprid ut länkarna jämnt */
+    align-items: center; /* Vertikalt centrerad */
+    width: 100%;
+    position: relative; /* Håll menyn inom header */
+    visibility: visible;
+    opacity: 1;
+    transition: none; /* Ingen övergång behövs här */
+  }
 
-    .header-navlist {
-        display: flex; /* Horisontell layout */
-        justify-content: center;
-        flex-direction: row; /* Ändra från kolumn till rad */
-        gap: 2rem; /* Lägger till avstånd mellan länkarna */
-        list-style-type: none; /* Ta bort punkterna från listobjekten */
-    }
+  .header-navlist {
+    display: flex; /* Horisontell layout */
+    justify-content: center;
+    flex-direction: row; /* Ändra från kolumn till rad */
+    gap: 2rem; /* Lägger till avstånd mellan länkarna */
+    list-style-type: none; /* Ta bort punkterna från listobjekten */
+  }
 
-    .header-navitem {
-        margin: 0; /* Tar bort vertikala marginaler */
-    }
+  .header-navitem {
+    margin: 0; /* Tar bort vertikala marginaler */
+  }
 
-    .hamburger {
-        display: none; /* Dölj hamburgermenyn på större skärmar */
-    }
+  .hamburger {
+    display: none; /* Dölj hamburgermenyn på större skärmar */
+  }
 }
 
 .flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3rem;
 }
 
 .flex-item {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    padding: 1rem; 
-    flex: 1 1 700px;
-    margin: 1rem;
-    border-radius: 8px;
-    box-sizing: border-box;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 1rem;
+  flex: 1 1 700px;
+  margin: 1rem;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
 .main-article {
-    flex: 1 1 100%;
-    margin-bottom: 6rem;
-    margin-top: 2rem;
+  flex: 1 1 100%;
+  margin-bottom: 6rem;
+  margin-top: 2rem;
 }
 
 .flex-item img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .flex-item video {
-    max-width: 100%; /* Gör videon responsiv */
-    height: auto;    /* Bevara bildens proportioner */
-    border-radius: 4px; /* Valfritt: ge en mjukad hörn */
+  max-width: 100%; /* Gör videon responsiv */
+  height: auto; /* Bevara bildens proportioner */
+  border-radius: 4px; /* Valfritt: ge en mjukad hörn */
 }
 
 /* Media query för mindre skärmar */
 @media (max-width: 1024px) {
-    .flex-item {
-        flex: 1 1 calc(50% - 2rem); /* Två artiklar i bredd för mindre skärmar */
-    }
+  .flex-item {
+    flex: 1 1 calc(50% - 2rem); /* Två artiklar i bredd för mindre skärmar */
+  }
 }
 
 @media (max-width: 768px) {
-    .flex-item {
-        flex: 1 1 100%; /* En artikel i bredd för mobilskärmar */
-    }
+  .flex-item {
+    flex: 1 1 100%; /* En artikel i bredd för mobilskärmar */
+  }
 }
 
 @media (min-width: 1024px) {
-    .flex-item {
-        flex: 1 1 calc(33.33% - 2rem); /* Tre artiklar i bredd */
-    }
+  .flex-item {
+    flex: 1 1 calc(33.33% - 2rem); /* Tre artiklar i bredd */
+  }
 }
 
 .flex-item p {
-    margin: 0.5rem 0; /* Avstånd mellan textstycken */
-    line-height: 2;  /* Öka radavståndet */
+  margin: 0.5rem 0; /* Avstånd mellan textstycken */
+  line-height: 2; /* Öka radavståndet */
 }
 
 .news-heading {
-    text-align: left; /* Justera texten till vänster */
-    color: var(--color-black); /* Färg på rubriken */
-    margin-bottom: 0; /* Avstånd under rubriken */
-    width: 100%; /* Se till att den tar upp hela bredden */
-    font-size: clamp(1.5rem, 2vw + 1rem, 2rem); /* Justera storleken responsivt */
+  text-align: left; /* Justera texten till vänster */
+  color: var(--color-black); /* Färg på rubriken */
+  margin-bottom: 0; /* Avstånd under rubriken */
+  width: 100%; /* Se till att den tar upp hela bredden */
+  font-size: clamp(1.5rem, 2vw + 1rem, 2rem); /* Justera storleken responsivt */
 }
 
 .news-subheading {
-    text-align: left; /* Justera texten till vänster */
-    color: var(--color-black); /* Färg på rubriken */
-    margin-top: 2rem; /* Skapa utrymme ovanför rubriken */
-    margin-bottom: 1rem; /* Utrymme under rubriken */
-    font-size: clamp(1.5rem, 2vw + 1rem, 2rem); /* Justera storleken responsivt */
-    flex-basis: 100%; /* Gör att rubriken tar hela bredden och hamnar på en egen rad */
+  text-align: left; /* Justera texten till vänster */
+  color: var(--color-black); /* Färg på rubriken */
+  margin-top: 2rem; /* Skapa utrymme ovanför rubriken */
+  margin-bottom: 1rem; /* Utrymme under rubriken */
+  font-size: clamp(1.5rem, 2vw + 1rem, 2rem); /* Justera storleken responsivt */
+  flex-basis: 100%; /* Gör att rubriken tar hela bredden och hamnar på en egen rad */
 }
 
 a {
-    color: inherit; /* Gör att länken är i samma färg som omgivande text */
-    text-decoration: none; /* Tar bort understrykning */
+  color: inherit; /* Gör att länken är i samma färg som omgivande text */
+  text-decoration: none; /* Tar bort understrykning */
 }
 
 a:hover {
-    text-decoration: underline; /* Valfritt: lägger till understrykning vid hovring */
+  text-decoration: underline; /* Valfritt: lägger till understrykning vid hovring */
 }
 
 footer {
-    background-color: var(--color-red);
-    color: white;
-    padding: 20px 0;
-    font-size: 1rem;
-  }
-  
+  background-color: var(--color-red);
+  color: white;
+  padding: 20px 0;
+  font-size: 1rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Fullbredd på mobiler */
+@media (max-width: 768px) {
   .footer-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  
-  /* Fullbredd på mobiler */
-  @media (max-width: 768px) {
-    .footer-container {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
-  }
-  
-  /* Länkar styling */
-  .footer-links ul,
-  .footer-social ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .footer-links ul li,
-  .footer-social ul li {
-    margin: 5px 0;
-  }
-  
-  .footer-links ul li a,
-  .footer-social ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .footer-links ul li a:hover,
-  .footer-social ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Kontakt */
-  .footer-contact a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .footer-contact a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Footer botten */
-  .footer-bottom {
+    grid-template-columns: 1fr;
     text-align: center;
-    padding-top: 10px;
-    font-size: 0.9rem;
-    border-top: 1px solid #555;
   }
-  
-  /* Responsiv design för tablet/mobil */
-  @media (max-width: 768px) {
-    .footer-container {
-      grid-template-columns: 1fr;
-    }
+}
+
+/* Länkar styling */
+.footer-links ul,
+.footer-social ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-links ul li,
+.footer-social ul li {
+  margin: 5px 0;
+}
+
+.footer-links ul li a,
+.footer-social ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links ul li a:hover,
+.footer-social ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Kontakt */
+.footer-contact a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer botten */
+.footer-bottom {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 0.9rem;
+  border-top: 1px solid #555;
+}
+
+/* Responsiv design för tablet/mobil */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
   }
-
-
+}
