@@ -14,6 +14,7 @@ body {
     background-color: var(--color-white);
 }
 
+
 /* karusell och tillhöranda media querys */
 
 .carousel {
@@ -252,6 +253,90 @@ body {
     }
 }
 
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.flex-item {
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 1rem; 
+    flex: 1 1 700px;
+    margin: 1rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.main-article {
+    flex: 1 1 100%;
+    margin-bottom: 6rem;
+    margin-top: 2rem;
+}
+
+.flex-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.flex-item video {
+    max-width: 100%; /* Gör videon responsiv */
+    height: auto;    /* Bevara bildens proportioner */
+    border-radius: 4px; /* Valfritt: ge en mjukad hörn */
+}
+
+/* Media query för mindre skärmar */
+@media (max-width: 1024px) {
+    .flex-item {
+        flex: 1 1 calc(50% - 2rem); /* Två artiklar i bredd för mindre skärmar */
+    }
+}
+
+@media (max-width: 768px) {
+    .flex-item {
+        flex: 1 1 100%; /* En artikel i bredd för mobilskärmar */
+    }
+}
+
+@media (min-width: 1024px) {
+    .flex-item {
+        flex: 1 1 calc(33.33% - 2rem); /* Tre artiklar i bredd */
+    }
+}
+
+.flex-item p {
+    margin: 0.5rem 0; /* Avstånd mellan textstycken */
+    line-height: 2;  /* Öka radavståndet */
+}
+
+.news-heading {
+    text-align: left; /* Justera texten till vänster */
+    color: var(--color-black); /* Färg på rubriken */
+    margin-bottom: 0; /* Avstånd under rubriken */
+    width: 100%; /* Se till att den tar upp hela bredden */
+    font-size: clamp(1.5rem, 2vw + 1rem, 2rem); /* Justera storleken responsivt */
+}
+
+.news-subheading {
+    text-align: left; /* Justera texten till vänster */
+    color: var(--color-black); /* Färg på rubriken */
+    margin-top: 2rem; /* Skapa utrymme ovanför rubriken */
+    margin-bottom: 1rem; /* Utrymme under rubriken */
+    font-size: clamp(1.5rem, 2vw + 1rem, 2rem); /* Justera storleken responsivt */
+    flex-basis: 100%; /* Gör att rubriken tar hela bredden och hamnar på en egen rad */
+}
+
+a {
+    color: inherit; /* Gör att länken är i samma färg som omgivande text */
+    text-decoration: none; /* Tar bort understrykning */
+}
+
+a:hover {
+    text-decoration: underline; /* Valfritt: lägger till understrykning vid hovring */
+}
+
 footer {
     background-color: var(--color-red);
     color: white;
@@ -324,4 +409,5 @@ footer {
       grid-template-columns: 1fr;
     }
   }
+
 
