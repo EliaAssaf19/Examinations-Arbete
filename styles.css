@@ -1,25 +1,40 @@
-/* Grundläggande styling */
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-red: #dc2626;
+    --color-darkred: #a01717;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: var(--color-white);
+}
+
 footer {
-    background-color: #333;
+    background-color: var(--color-red);
     color: white;
     padding: 20px 0;
     font-size: 1rem;
   }
   
   .footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
+
   
-  .footer-container > section, 
-  .footer-container > nav, 
-  .footer-container > address {
-    flex: 1 1 200px;
-    margin: 10px;
+  /* Fullbredd på mobiler */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
   }
   
   /* Länkar styling */
@@ -63,16 +78,9 @@ footer {
     border-top: 1px solid #555;
   }
   
-  /* Responsiv design */
+  /* Responsiv design för tablet/mobil */
   @media (max-width: 768px) {
     .footer-container {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .footer-container > section,
-    .footer-container > nav,
-    .footer-container > address {
-      flex: 1 1 100%;
+      grid-template-columns: 1fr;
     }
   }
