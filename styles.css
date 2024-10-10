@@ -1,3 +1,5 @@
+
+/* Färgschema */
 :root {
     --color-white: #ffffff;
     --color-black: #000000;
@@ -10,6 +12,244 @@ body {
     padding: 0;
     font-family: 'Inter', Arial, sans-serif;
     background-color: var(--color-white);
+}
+
+/* karusell och tillhöranda media querys */
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Fyller hela bredden */
+}
+
+.carousel-container {
+    overflow: hidden; /* Döljer överskjutande element */
+}
+
+.carousel-list {
+    display: flex; /* Gör listan till en flexbox */
+    transition: transform 0.3s ease; /* Smidig övergång vid scrollning */
+    list-style-type: none;
+    padding: 0; /* Ta bort padding */
+    margin: 0; /* Ta bort margin */
+    width: 100%; /* Se till att hela bredden används */
+}
+
+.carousel-item {
+    flex: 0 0 calc(33.33% - 20px); /* Tre objekt på stor skärm */
+    margin: 0 10px; /* Justera marginalen */
+    background-color: var(--color-darkred);
+    padding: 10px;
+    border: 1px solid var(--color-darkred);
+    border-radius: 5px;
+    box-sizing: border-box; /* Inkludera padding och border i bredden */
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .carousel-item {
+        flex: 0 0 calc(50% - 20px); /* Två objekt på surfplattor */
+    }
+}
+
+@media (max-width: 767px) {
+    .carousel-item {
+        flex: 0 0 calc(100% - 20px); /* Ett objekt på mobiler */
+    }
+}
+
+/* karusell knappar */
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--color-red);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: 10px;
+    color: var(--color-white);
+}
+
+.carousel-button.next {
+    right: 10px;
+    color: var(--color-white);
+}
+
+.carousel-button:hover {
+    background-color: var(--color-black);
+}
+
+.logos-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Loggor & Info */
+
+.team-logo {
+    height: 3rem; /* Justera höjden efter behov */
+    width: auto; /* Låt bredden anpassa sig för att behålla proportionerna */
+    margin: 0 10px; /* Lägger till avstånd mellan loggan och texten */
+}
+
+.match-info {
+    display: flex; /* Gör match-info till flexbox för att arrangera loggorna och texten horisontellt */
+    flex-direction: column;
+    align-items: center; /* Centrerar loggorna och texten vertikalt */
+    color: var(--color-white);
+    font-size: 1rem;
+}
+
+.match-info h3 {
+    margin: 5px 0; /* Lägger till avstånd runt rubriken */
+    text-align: center; /* Centrerar rubriken */
+}
+
+.match-info p {
+    margin: 0; /* Tar bort marginalen för paragrafen */
+    text-align: center; /* Centrerar resultatet */
+    font-size: 1.9rem;
+    font-weight: bold;
+}
+
+.location-date p {
+    text-align: center;
+    color: var(--color-white);
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Header-element */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem; /* Minska paddingen */
+    background-color: var(--color-red);
+    width: 100%;
+    box-sizing: border-box; /* Inkludera padding och border i bredden */
+    min-height: 60px; /* Minska minsta höjd */
+    position: relative;
+}
+
+.header-nav {
+    display: flex; /* Gör navigationsmenyn till en flexbox */
+    justify-content: center; /* Centrera länkarna horisontellt */
+    flex-wrap: wrap; /* Låt länkarna radbrytas om de inte får plats */
+    width: 100%; /* Se till att menyn fyller hela bredden */
+}
+
+.header-navlink {
+    color: #ffffff; /* Textfärg */
+    text-decoration: none; /* Ta bort understrykning */
+    font-weight: bold; /* Fet stil */
+    font-size: clamp(1rem, 2vw + 1rem, 1.5rem); /* Justera textstorleken */
+    padding: clamp(0.5rem, 2vw, 1rem); /* Minska padding */
+    border: 2px solid #ffffff; /* Lägg till en vit ram runt varje länk */
+    border-radius: 5px; /* Rundar hörnen på boxen */
+    display: inline-block; /* Gör länken till ett block som tar upp plats som en box */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smidig övergång för hover-effekten */
+    margin: clamp(0.5rem, 1vw, 1rem);; /* Justera avståndet mellan länkarna */
+}
+
+.header-navlink:hover {
+    background-color: #ffffff; /* Ändra bakgrundsfärgen vid hover */
+    color: var(--color-red); /* Ändra textfärgen vid hover */
+    border-color: var(--color-red); /* Ändra ramens färg vid hover */
+}
+
+.header-logo img {
+    height: 5rem; /* Justera höjden efter behov */
+    width: auto; /* Låt bredden anpassa sig för att behålla proportionerna */
+    padding-left: 2rem; /* Lägger till lite avstånd till vänster */
+}
+
+/* Hamburger och tillhörande media querys */
+
+.hamburger {
+    display: none; /* Döljer hamburgermenyn som standard */
+    font-size: 24px; /* Justera storleken på hamburgermenyn */
+    background: none; /* Ta bort bakgrund */
+    border: none; /* Ta bort border */
+    color: var(--color-white); /* Ändra färg på ikonen */
+    cursor: pointer; /* Ändra muspekaren till en pekare */
+}
+
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block; /* Visa hamburgermenyn */
+    }
+
+    .header-nav {
+        visibility: hidden; /* Dölj menyn */
+        opacity: 0; /* Gör menyn osynlig */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--color-red);
+        z-index: 100;
+        transition: visibility 0s, opacity 0.3s ease-out; /* Gör övergången mjuk */
+    }
+
+    /* När header-nav har klassen "active", visa menyn */
+    .header-nav.active {
+        visibility: visible; /* Visa menyn */
+        opacity: 1; /* Gör menyn fullt synlig */
+    }
+
+    .header-navlist {
+        display: flex;
+        flex-direction: column; /* Gör listan vertikal */
+        padding: 10px;
+        list-style-type: none;
+    }
+
+    .header-navitem {
+        margin: 15px 0; /* Lägger till marginal mellan menyalternativ */
+    }
+}
+
+/* Media query till nav för större skärmar */
+
+@media (min-width: 769px) {
+    .header-nav {
+        display: flex; /* Gör menyn synlig och horisontell */
+        justify-content: center; /* Sprid ut länkarna jämnt */
+        align-items: center; /* Vertikalt centrerad */
+        width: 100%;
+        position: relative; /* Håll menyn inom header */
+        visibility: visible;
+        opacity: 1;
+        transition: none; /* Ingen övergång behövs här */
+    }
+
+    .header-navlist {
+        display: flex; /* Horisontell layout */
+        justify-content: center;
+        flex-direction: row; /* Ändra från kolumn till rad */
+        gap: 2rem; /* Lägger till avstånd mellan länkarna */
+        list-style-type: none; /* Ta bort punkterna från listobjekten */
+    }
+
+    .header-navitem {
+        margin: 0; /* Tar bort vertikala marginaler */
+    }
+
+    .hamburger {
+        display: none; /* Dölj hamburgermenyn på större skärmar */
+    }
 }
 
 footer {
@@ -84,3 +324,4 @@ footer {
       grid-template-columns: 1fr;
     }
   }
+
